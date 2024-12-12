@@ -1,17 +1,8 @@
-This is a homework finished in 2023 spring.
+This is a homework finished in 2023 spring. I also uploaded the documents used in this homework to help you understand
+the whole project.
 
-This study utilized functional magnetic resonance imaging (fMRI) data from subjects watching specific clips of the movie 
-"Despicable Me" to predict the gender and age of the subjects. 
-
-The study employed machine learning methods and explored various preprocessing, feature extraction techniques, and predictive 
-models to compare their performance in predicting gender and age. Separate classification and regression models were 
-established for gender and age, respectively. For gender prediction, the study compared 10 different classification models, 
-including logistic regression, support vector machines, K-nearest neighbors, etc., and ultimately selected the logistic 
-regression model as the best model. For age prediction, the study compared 12 different regression models, including support 
-vector machines, linear regression, random forests, etc., and ultimately selected the linear regression model as the best model. 
-
-Subsequently, the study analyzed the ROI modalities for each time window and visualized the model metrics, finding that the 
-models established with ROI modalities in some time windows performed well in predicting gender and age indicators.
+This study utilized fMRI data from subjects watching specific clips of the movie "Despicable Me" to predict the gender 
+and age of the subjects. We also investigated which time windows performed well in predicting gender and age.
 
 Codes Introduction：
 【1】reduce_dimension_FC.py文件用于做数据预处理，将1171个被试的原始数据使用功能连接（Funtional Connectivity）的方式做降维。
