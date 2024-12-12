@@ -1,8 +1,25 @@
-本研究利用旨在利用被试观看电影《Despicable Me》特定片段时，脑功能磁共振成像（fMRI）数据预测被试者的性别和年龄。
-研究采用了机器学习方法，并探索了不同的预处理、特征提取方法和预测模型，以比较它们在性别和年龄预测方面的性能。
+This is a homework finished in 2023 spring.
 
-研究针对性别和年龄分别建立了分类模型和回归模型。
-针对性别预测，研究比较了10种不同的分类模型，包括逻辑回归、支持向量机、K近邻等，最终选择了逻辑回归模型作为最佳模型。
-针对年龄预测，研究比较了12种不同的回归模型，包括支持向量机、线性回归、随机森林等，最终选择了线性回归模型作为最佳模型。
+This study utilized functional magnetic resonance imaging (fMRI) data from subjects watching specific clips of the movie 
+"Despicable Me" to predict the gender and age of the subjects. 
 
-随后，研究对每个时间窗下的ROI模态进行了动态功能连接分析，并将模型指标可视化，发现在部分时间窗下的ROI模态建立的模型对性别和年龄的预测指标表现良好。
+The study employed machine learning methods and explored various preprocessing, feature extraction techniques, and predictive 
+models to compare their performance in predicting gender and age. Separate classification and regression models were 
+established for gender and age, respectively. For gender prediction, the study compared 10 different classification models, 
+including logistic regression, support vector machines, K-nearest neighbors, etc., and ultimately selected the logistic 
+regression model as the best model. For age prediction, the study compared 12 different regression models, including support 
+vector machines, linear regression, random forests, etc., and ultimately selected the linear regression model as the best model. 
+
+Subsequently, the study analyzed the ROI modalities for each time window and visualized the model metrics, finding that the 
+models established with ROI modalities in some time windows performed well in predicting gender and age indicators.
+
+Codes Introduction：
+【1】reduce_dimension_FC.py文件用于做数据预处理，将1171个被试的原始数据使用功能连接（Funtional Connectivity）的方式做降维。
+【2】classify.py文件用9个不同的模型对原始数据做十折交叉验证，评估不同模型的性能。
+【3】regression.py文件用9个不同的模型对原始数据做十折交叉验证，评估不同模型的性能。
+【4】gridsearch.py文件用于做网格搜索，寻找不同模型的最佳参数。
+【5】train.py文件用于对数据进行预处理（缺失值填补、归一化和标准化）并用LogisticRegression进行训练，保存模型参数。
+【6】test.py文件读取保存好的模型，并输入测试集，预测性别和年龄。
+【7】sliding_window_prepocessing.py文件用于对被试的原始数据预处理，将其转换成738个时间窗下的1140个被试的ROI模态。
+【8】sliding_window_age.py和sliding_window_gender.py文件用于对预处理后的每一个时间窗下的模态进行学习和预测，获得十折交叉验证后的指标。
+【9】draw_pics.py用于将上一个文件跑出来的结果可视化，将分类和预测的结果做min-max归一化，并画一条折线图。
